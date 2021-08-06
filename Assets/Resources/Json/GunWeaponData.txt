@@ -1,0 +1,32 @@
+[
+	{
+		"Id": 1,
+		"Name":"Assault Rifle",
+		"Damage":10,
+		"Durage":10000
+	},
+	{
+		"Id": 2,
+		"Name": "Hunting Rifle",
+		"Damage": 5,
+		"Durage": 50
+	},
+	{
+		"Id": 3,
+		"Name": "Shotgun",
+		"Damage": 20,
+		"Durage": 25
+	},
+	{
+		"Id":4,
+		"Name": "Wooden Bow",
+		"Damage": 15,
+		"Durage": 5
+	},
+	{
+		"Id":5,
+		"Name": "Wooden Spear",
+		"Damage": 30,
+		"Durage": 3
+	}
+]
