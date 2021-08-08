@@ -41,6 +41,14 @@ public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
     }
 
 
+    private void OnDisable()
+    {
+        CraftingPanelController.Instance.ResetSlotItem();
+        ToolBarPanelController.Instance.ResetSlotItem();
+        m_Model.ObjectToJson(slotList, "InventoryJsonData.txt");
+    }
+
+
     /// <summary>
     ///  初始化乱七八糟的变量的函数
     /// </summary>
@@ -74,14 +82,17 @@ public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
     /// </summary>
     private void InitItems()
     {
-        List<InventoryItem> itemList = m_Model.GetItemList("InventoryJsonData");
+        List<InventoryItem> itemList = m_Model.GetItemList("InventoryJsonData.txt");
         for(int i = 0; i < itemList.Count; i++)
         {
-            GameObject temp = GameObject.Instantiate(m_View.Prefab_Item, slotList[i].transform);
-            temp.name = "InventoryItem";
-            Sprite tempSprite = m_View.GetInventorySpriteByName(itemList[i].ItemName);
-            temp.GetComponent<InventoryItemController>().InitSingleItem(itemList[i].ItemId,tempSprite, 
-                itemList[i].ItemNum,itemList[i].ItemBar);
+            if(itemList[i].ItemName != "")
+            {
+                GameObject temp = GameObject.Instantiate(m_View.Prefab_Item, slotList[i].transform);
+                temp.name = "InventoryItem";
+                Sprite tempSprite = m_View.GetInventorySpriteByName(itemList[i].ItemName);
+                temp.GetComponent<InventoryItemController>().InitSingleItem(itemList[i].ItemId, tempSprite,
+                    itemList[i].ItemNum, itemList[i].ItemBar);
+            }
         }
     }
 
@@ -157,6 +168,52 @@ public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
         }
     }
 
+
+
+
+    /// <summary>
+    ///  根据 ID 值进行添加材料
+    ///  name 用来确定图标
+    /// </summary>
+    public void AddItemWithID(int id, string name, int number = 1)
+    {
+        Show();
+        /// 第一次寻找字典中的相应 ID 的值并合并
+        for (int i = 0; i < slotList.Count; i++)
+        {
+            Transform tempTransform = slotList[i].transform.Find("InventoryItem");
+            if (tempTransform != null)
+            {
+                InventoryItemController tempInventory = tempTransform.GetComponent<InventoryItemController>();
+                if (tempInventory.ItemID == id)
+                {
+                    tempInventory.ChangeNum(number);
+                    Hide();
+                    return;
+                }
+            }
+        }
+
+
+        /// 没找到的时候添加一个
+        for (int i = 0; i < slotList.Count; i++)
+        {
+            Transform tempTransform = slotList[i].transform.Find("InventoryItem");
+            if (tempTransform == null)
+            {
+                GameObject temp = GameObject.Instantiate(m_View.Prefab_Item, slotList[i].transform);
+                temp.name = "InventoryItem";
+                Sprite tempSprite = m_View.GetInventorySpriteByName(name);
+                
+                temp.GetComponent<InventoryItemController>().InitSingleItem(id, tempSprite,
+                    number, 0);
+                Hide();
+                return;
+            }
+        }
+        Hide();
+    }
+
     
     /// <summary>
     /// 向合成槽中添加物品的通知函数
@@ -178,11 +235,15 @@ public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        m_View.transform.localScale = new Vector3(1, 1, 1);
+        m_View.CraftingCenter.SetActive(true);
+        //gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        m_View.transform.localScale = new Vector3(0,0,0);
+        m_View.CraftingCenter.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

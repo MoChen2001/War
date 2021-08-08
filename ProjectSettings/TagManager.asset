@@ -20,6 +20,7 @@ TagManager:
   - BuildPlan
   - PlatformForPlatform
   - PlatformForNormalStairs
+  - StoneAxe
   layers:
   - Default
   - TransparentFX

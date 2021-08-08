@@ -136,8 +136,13 @@ public class ToolBarPanelController : MonoBehaviour, IUIPanelShowHide
 				// 当前武器不为空时将其隐藏
 				if (currWeapon != null )
 				{
+					if (currWeapon.tag == "StoneAxe")
+					{
+						currWeapon.GetComponent<StoneHatchetControl>().Holster();
+						yield return new WaitForSeconds(waitTime);
+					}
 					// 动画过滤  如果是建造就不执行该动画方法
-					if(currWeapon.tag != "BuildPlan")
+					else if(currWeapon.tag != "BuildPlan")
                     {
 						currWeapon.GetComponent<GunControlBase>().Holster();
 						yield return new WaitForSeconds(waitTime);
@@ -152,7 +157,13 @@ public class ToolBarPanelController : MonoBehaviour, IUIPanelShowHide
 			}
 			else if (currWeapon != null)
 			{
-				if (currWeapon.tag != "BuildPlan")
+				if (currWeapon.tag == "StoneAxe")
+				{
+					currWeapon.GetComponent<StoneHatchetControl>().Holster();
+					yield return new WaitForSeconds(waitTime);
+				}
+				// 动画过滤  如果是建造就不执行该动画方法
+				else if (currWeapon.tag != "BuildPlan")
 				{
 					currWeapon.GetComponent<GunControlBase>().Holster();
 					yield return new WaitForSeconds(waitTime);
@@ -170,7 +181,13 @@ public class ToolBarPanelController : MonoBehaviour, IUIPanelShowHide
         {
 			if (currWeapon != null)
 			{
-				if (currWeapon.tag != "BuildPlan")
+				if (currWeapon.tag == "StoneAxe")
+				{
+					currWeapon.GetComponent<StoneHatchetControl>().Holster();
+					yield return new WaitForSeconds(waitTime);
+				}
+				// 动画过滤  如果是建造就不执行该动画方法
+				else if (currWeapon.tag != "BuildPlan")
 				{
 					currWeapon.GetComponent<GunControlBase>().Holster();
 					yield return new WaitForSeconds(waitTime);
@@ -182,11 +199,51 @@ public class ToolBarPanelController : MonoBehaviour, IUIPanelShowHide
 
 
 
-    #region 接口方法
-    /// <summary>
-    /// 接口的显示方法
-    /// </summary>
-    public void Show()
+
+	/// <summary>
+	/// 重置图谱槽的时候将里面已经填充的物体合并填充回背包
+	/// </summary>
+	public void ResetSlotItem()
+	{
+		GameObject tempV = null;
+		InventoryItemController tempController = null;
+		// 用来合并合成面板中同类的东西的临时字典
+		Dictionary<int, GameObject> map = new Dictionary<int, GameObject>();
+		for (int i = 0; i < slotItems.Count; i++)
+		{
+			Transform temp = slotItems[i].transform.Find("InventoryItem");
+			if (temp != null)
+			{
+				// 字典中查询到的值
+				// 当前的物体的控制器
+				tempController = temp.GetComponent<InventoryItemController>();
+				// 如果字典中有该类型的物体
+				if (map.TryGetValue(tempController.ItemID, out tempV))
+				{
+					tempV.GetComponent<InventoryItemController>().ChangeNum(tempController.Number);
+					GameObject.Destroy(tempController.gameObject);
+				}
+				// 字典中没有该类型的物体
+				else
+				{
+					map.Add(tempController.ItemID, tempController.gameObject);
+				}
+				tempController = null;
+			}
+
+		}
+
+
+		InventoryPanelController.Instance.AddItem(map);
+	}
+
+
+
+	#region 接口方法
+	/// <summary>
+	/// 接口的显示方法
+	/// </summary>
+	public void Show()
     {
 		// 按其他的键也可能调用因此加一个判断
 		if(isHide)

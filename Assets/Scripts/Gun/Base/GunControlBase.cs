@@ -63,7 +63,7 @@ public abstract class GunControlBase : MonoBehaviour
 	/// <summary>
 	/// 判断是否可以射击的字段
 	/// </summary>
-	public bool CanShoot { get { return canShoot; } protected set { canShoot = value; } }
+	public bool CanShoot { get { return canShoot; }  set { canShoot = value; } }
 	/// <summary>
 	///  view 基类层的属性
 	/// </summary>

@@ -42,4 +42,5 @@ public class InventoryItem  {
         this.ItemNum = number;
         this.ItemBar = itemBar;
     }
+
 }

@@ -21,6 +21,10 @@ public class InputManager : MonoBehaviour
 	private Image gunStar;							// 第一人称的瞄准物体
 
 
+
+	public bool InventoryControl { get { return inventoryControl; } }
+
+
 	/// <summary>
 	///  设置属性时改变状态
 	/// </summary>

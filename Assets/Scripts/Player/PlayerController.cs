@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 
 public delegate void PlayerDeathFunction();
@@ -170,8 +171,29 @@ public class PlayerController : MonoBehaviour {
 			breathAudio.Stop();
 			AudioManager.Instance.PlayAudioClipByName(ClipName.PlayerDeath, m_Transform.position);
 			GameObject.Find("Manager").GetComponent<InputManager>().enabled = false;
+			GunControlBase currentPlayer = GameObject.Find("FPSController/PersonCamera").GetComponentInChildren<GunControlBase>();
+			if(currentPlayer != null)
+            {
+				currentPlayer.enabled = false;
+			}
+			InventoryPanelController.Instance.gameObject.SetActive(false);
+			StartCoroutine("JumpScene");
 		}
 	}
+
+
+
+	/// <summary>
+	///  死亡过后跳转场景
+	/// </summary>
+	private IEnumerator JumpScene()
+    {
+		yield return new WaitForSeconds(3.0f);
+		SceneManager.LoadScene(0);
+	}
+
+
+
 
 	/// <summary>
 	///  角色呼吸辅助函数

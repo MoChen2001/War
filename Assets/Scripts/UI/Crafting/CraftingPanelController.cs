@@ -206,7 +206,7 @@ public class CraftingPanelController : MonoBehaviour
 	/// <summary>
 	/// 重置图谱槽的时候将里面已经填充的物体合并填充回背包
 	/// </summary>
-	private void ResetSlotItem()
+	public void ResetSlotItem()
     {
 		GameObject tempV = null;
 		InventoryItemController tempController = null;

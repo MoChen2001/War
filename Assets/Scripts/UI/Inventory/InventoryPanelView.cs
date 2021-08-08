@@ -21,7 +21,7 @@ public class InventoryPanelView : MonoBehaviour
 	private GameObject prefab_Item;
 
 	private Dictionary<string, Sprite> inventoryDic;
-
+	private GameObject craftingCenter;
 
 
 	/// <summary>
@@ -45,8 +45,11 @@ public class InventoryPanelView : MonoBehaviour
         get { return prefab_Item; }
     }
 
-
-
+	public GameObject CraftingCenter
+	{ 
+		get
+		{ return craftingCenter; } 
+	}
 
 	
 	
@@ -54,13 +57,14 @@ public class InventoryPanelView : MonoBehaviour
 	{
 		m_Transform = gameObject.GetComponent<Transform>();
 		gird_Transform = m_Transform.Find("InventoryBackground/InventoryGrid").GetComponent<Transform>();
-
+		craftingCenter = GameObject.Find("CanvasCamera/InventoryPanel/CraftingPanel/CraftingCenter");
 
 		prefab_Slot = Resources.Load<GameObject>("UI/Prefabs/InventorySlot");
 		prefab_Item = Resources.Load<GameObject>("UI/Prefabs/InventoryItem");
 
 
 		inventoryDic = ResourcesTool.LoadSpriteWithPath("UI/ItemTextures/Inventory");
+
 	}
 
 

@@ -28,7 +28,6 @@ D:\Projects\UnityProjects\War\Temp\bin\Debug\nunit.framework.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\UnityEngine.Timeline.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\UnityEngine.Analytics.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\UnityEngine.HoloLens.xml
-D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp.dll
@@ -46,3 +45,4 @@ D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween43.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween46.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween50.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTweenPro.xml
+D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache

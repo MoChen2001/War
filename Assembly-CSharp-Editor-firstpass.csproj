@@ -56,7 +56,6 @@
      <None Include="Assets\Resources\Json\CraftingMapJsonData.txt" />
      <None Include="Assets\Plugins\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\Resources\Json\GunWeaponData.txt" />
-     <None Include="Assets\Resources\Json\InventoryJsonData.txt" />
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\SSAA.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\FXAAPreset3.shader" />
@@ -68,6 +67,7 @@
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_BloomAndFlares\BlendForBloom.shader" />
+     <None Include="Assets\Resources\Json\InventoryJsonData.txt" />
      <None Include="Assets\BuildModels\Shaders\Standard\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Plugins\Demigiant\DOTween\DOTween46.xml" />

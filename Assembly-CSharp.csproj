@@ -78,12 +78,14 @@
      <Compile Include="Assets\Scripts\Gun\Help\BulletMark.cs" />
      <Compile Include="Assets\Scripts\Gun\Help\GunFactory.cs" />
      <Compile Include="Assets\Scripts\Gun\Help\GunWeaponData.cs" />
+     <Compile Include="Assets\Scripts\Gun\Help\MaterialHelp.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\AssaultRifle.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\AssaultRifleView.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\HuntingRifle.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\HuntingRifleView.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\Shotgun.cs" />
      <Compile Include="Assets\Scripts\Gun\HotWeapon\ShotgunView.cs" />
+     <Compile Include="Assets\Scripts\Gun\StoneHatchetControl.cs" />
      <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Manager\InputManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
@@ -134,7 +136,6 @@
      <None Include="Assets\Resources\Json\CraftingMapJsonData.txt" />
      <None Include="Assets\Plugins\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\Resources\Json\GunWeaponData.txt" />
-     <None Include="Assets\Resources\Json\InventoryJsonData.txt" />
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\SSAA.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\FXAAPreset3.shader" />
@@ -146,6 +147,7 @@
      <None Include="Assets\BuildModels\Shaders\Standard\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\BuildModels\Shaders\Standard\_BloomAndFlares\BlendForBloom.shader" />
+     <None Include="Assets\Resources\Json\InventoryJsonData.txt" />
      <None Include="Assets\BuildModels\Shaders\Standard\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Plugins\Demigiant\DOTween\DOTween46.xml" />

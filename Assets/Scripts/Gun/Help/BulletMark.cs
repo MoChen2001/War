@@ -22,6 +22,10 @@ public class BulletMark : MonoBehaviour
     private Queue<Vector2> markQueue;           // 管理弹痕的队列
     [SerializeField]private int hp;             // 物体的生命值              
 
+    private GameObject woodPrefab;              // 树木爆出的材料预制体
+    private GameObject stonePrefab;             // 石头爆出的材料预制体
+    private GameObject metalPrefab;             // 金属爆出的材料预制体
+    private Transform materialParents;
 
     public int HP
     {
@@ -31,6 +35,7 @@ public class BulletMark : MonoBehaviour
             hp = value;
             if(hp <= 0)
             {
+                CreateMaterial();
                 GameObject.Destroy(gameObject);
             }
         }
@@ -42,6 +47,12 @@ public class BulletMark : MonoBehaviour
     {
         hp = 500;
         effect_Parents = GameObject.Find("TempObject/Decal_" + materialType.ToString() + "_Effects").GetComponent<Transform>();
+        materialParents = GameObject.Find("EnvManager/MaterialManager").GetComponent<Transform>();
+
+
+        woodPrefab = Resources.Load<GameObject>("Env/WoodMaterial");
+        stonePrefab = Resources.Load<GameObject>("Env/StoneMaterial");
+        metalPrefab = Resources.Load<GameObject>("Env/MetalMaterial");
 
         bulletEffect = Resources.Load<GameObject>("Effects/Gun/Bullet Impact FX_" + materialType.ToString());
         mark_Texture = Resources.Load<Texture2D>("Gun/BulletMarks/Bullet Decal_" + materialType.ToString());
@@ -160,6 +171,15 @@ public class BulletMark : MonoBehaviour
     }
 
 
+    /// <summary>
+    ///  斧子的特效函数
+    /// </summary>
+    public void PlayEffectsWithAxe(RaycastHit hit)
+    {
+        PlayEffects(hit);
+        PlayerHitSound(hit);
+    }
+
 
 
     /// <summary>
@@ -181,5 +201,60 @@ public class BulletMark : MonoBehaviour
             temp.transform.position = hit.point;
         }
         pool.AddObject(temp, 1.0f);
+    }
+
+
+
+
+    /// <summary>
+    ///  爆出材料函数
+    /// </summary>
+    private void CreateMaterial()
+    {
+        GameObject target = null;
+        switch (materialType)
+        {
+            case MaterialType.Stone:
+                target = stonePrefab;
+                break;
+            case MaterialType.Metal:
+                target = metalPrefab;
+                break;
+            case MaterialType.Wood:
+                target = woodPrefab;
+                break;
+            default:
+                break;
+        }
+        if(target != null)
+        {
+            for(int i = 0; i < Random.Range(4,6); i++)
+            {
+                Vector3 offset = new Vector3(Random.Range(0.1f, 1.0f), 0.3f, Random.Range(0.1f, 1.0f));
+                GameObject obj = GameObject.Instantiate(target, gameObject.transform.position + offset,
+                        Quaternion.identity, materialParents);
+                MaterialHelp mh = obj.GetComponent<MaterialHelp>();
+                if(mh != null)
+                {
+                    switch (materialType)
+                    {
+                        case MaterialType.Stone:
+                            mh.ID = 2;
+                            mh.ItemName = "Stone";
+                            break;
+                        case MaterialType.Metal:
+                            mh.ID = 2;
+                            mh.ItemName = "Stone";
+                            break;
+                        case MaterialType.Wood:
+                            mh.ID = 1;
+                            mh.ItemName = "Wood";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
     }
 }

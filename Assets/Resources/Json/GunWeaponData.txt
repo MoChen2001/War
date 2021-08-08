@@ -28,5 +28,11 @@
 		"Name": "Wooden Spear",
 		"Damage": 30,
 		"Durage": 3
+	},
+	{	
+		"Id":6,
+		"Name": "Stone Hatchet",
+		"Damage": 200,
+		"Durage": 20		
 	}
 ]

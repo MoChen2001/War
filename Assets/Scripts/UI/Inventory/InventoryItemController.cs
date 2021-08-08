@@ -65,7 +65,18 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
 	}
 	public int ItemID { get { return itemId; } }
 	public Image BarImage { get { return barImage; } }
-
+	public int ItemBar { get { return itemBar; } }
+	public string ImageName 
+	{
+		get 
+		{ 
+			if(m_Image == null)
+            {
+				return "";
+            }
+			return m_Image.sprite.name.ToString(); 
+		} 
+	}
 
 	void Awake () 
 	{

@@ -24,6 +24,7 @@ public class AI : MonoBehaviour
     private float runSpeed;                     // 奔跑状态的速度
     private Transform effectsParent;            // 特效的父物体
     private bool findPlayer;                    // 是否寻找玩家的字段
+    private bool havePlay;                      // 2s 内是否已经播放过一次音效
     private AIManagerType m_AIType = AIManagerType.NULL;
 
     // 自身属性的子弹
@@ -76,6 +77,7 @@ public class AI : MonoBehaviour
         m_Animator = m_Transform.GetComponent<Animator>();
         effectsParent = GameObject.Find("TempObject/Blood_Effects").GetComponent<Transform>();
 
+        havePlay = false;
         findPlayer = true;
         walkSpeed = 0.8f;
         runSpeed = 2.0f;
@@ -329,13 +331,18 @@ public class AI : MonoBehaviour
             {
                 m_NavMeshAngent.isStopped = true;
                 ToggleState(AIState.ATTACK);
-                if(AIManagerType.BOAR == m_AIType)
+                if(!havePlay)
                 {
-                    AudioManager.Instance.PlayAudioClipByName(ClipName.BoarAttack, m_Transform.position);
-                }
-                else if(m_AIType == AIManagerType.CANNIBAL)
-                {
-                    AudioManager.Instance.PlayAudioClipByName(ClipName.ZombieAttack, m_Transform.position);
+                    havePlay = true;
+                    if (AIManagerType.BOAR == m_AIType)
+                    {
+                        AudioManager.Instance.PlayAudioClipByName(ClipName.BoarAttack, m_Transform.position);
+                    }
+                    else if (m_AIType == AIManagerType.CANNIBAL)
+                    {
+                        AudioManager.Instance.PlayAudioClipByName(ClipName.ZombieAttack, m_Transform.position);
+                    }
+                    StartCoroutine("AudioPlayTime");
                 }
             }
             else
@@ -347,6 +354,14 @@ public class AI : MonoBehaviour
 
         }
     }
+
+
+    private IEnumerator AudioPlayTime()
+    {
+        yield return new WaitForSeconds(2.0f);
+        havePlay = false;
+    }
+
 
 
 

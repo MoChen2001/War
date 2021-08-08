@@ -16,7 +16,17 @@ public class ToolBarSlotController : MonoBehaviour
 	public bool Selected
     {
         get { return selected; }
-        set { selected = value; select_Bg.SetActive(value); }
+        set 
+		{ 
+			selected = value; 
+			select_Bg.SetActive(value);
+			CanvasGroup cg = gameObject.GetComponent<CanvasGroup>();
+			if(cg == null)
+            {
+				cg = gameObject.AddComponent<CanvasGroup>();
+			}
+			cg.blocksRaycasts = !value;
+		}
 	}					// 是否被选中的属性，同时也会设置背景框
 
 	private void Awake()

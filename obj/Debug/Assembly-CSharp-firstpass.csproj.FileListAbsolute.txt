@@ -40,8 +40,8 @@ D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween43.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween46.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTween50.xml
 D:\Projects\UnityProjects\War\Temp\bin\Debug\DOTweenPro.xml
-D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.pdb
+D:\Projects\UnityProjects\War\obj\Debug\Assembly-CSharp-firstpass.csproj.AssemblyReference.cache
