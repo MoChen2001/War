@@ -61,16 +61,20 @@ public class CraftingPanelModel : MonoBehaviour
         Dictionary<int, CraftingSlotContentItem> temp = new Dictionary<int, CraftingSlotContentItem>();
         string str = Resources.Load<TextAsset>("Json/" + name).text;
         JsonData jsonData = JsonMapper.ToObject(str);
-        for(int i = 0; i < jsonData.Count; i++)
+        for (int j = 0; j < jsonData.Count; j++)
         {
-            int id = int.Parse(jsonData[i]["MapId"].ToString());
-            string content = jsonData[i]["MapContents"].ToString();
-            string[] contents = content.Split(',');
-            int count = int.Parse(jsonData[i]["MaterialsCount"].ToString());
-            string mapName = jsonData[i]["MapName"].ToString();
-            CraftingSlotContentItem tempItem = new CraftingSlotContentItem(id, contents,count, mapName);
-            temp.Add(id, tempItem);
-
+            JsonData jd = jsonData[j]["Type"];
+            for (int i = 0; i < jd.Count; i++)
+            {
+                int id = int.Parse(jd[i]["MapId"].ToString());
+                string content = jd[i]["MapContents"].ToString();
+                string[] contents = content.Split(',');
+                int count = int.Parse(jd[i]["MaterialsCount"].ToString());
+                string mapName = jd[i]["MapName"].ToString();
+                int haveBar = int.Parse(jd[i]["HaveBar"].ToString());
+                CraftingSlotContentItem tempItem = new CraftingSlotContentItem(id, contents, count, mapName, haveBar);
+                temp.Add(id, tempItem);
+            }
         }
 
         return temp;

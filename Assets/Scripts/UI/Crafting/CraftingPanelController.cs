@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 合成类控制器（Controller)
@@ -133,7 +134,7 @@ public class CraftingPanelController : MonoBehaviour
 			ResetSlotItem();
 			/// 改变合成目标UI
 			Sprite temp = m_View.GetCraftingItemSpriteByName(tempItem.MapName);
-			m_View.Right_Transform.GetComponent<CraftingController>().SetCraftingContentSprite(tempItem.MapId, temp);
+			m_View.Right_Transform.GetComponent<CraftingController>().SetCraftingContentSprite(tempItem.MapId, temp, tempItem.HaveBar);
 			materialsCount = tempItem.MaterialsCount;
 			/// 改变合成槽UI
 			for (int i = 0; i < slotNum; i++)
@@ -185,6 +186,8 @@ public class CraftingPanelController : MonoBehaviour
 			currentIndex = index;
 			tabList[currentIndex].GetComponent<CraftingTabController>().ButtonBGClick();
 			contentList[currentIndex].SetActive(true);
+			m_View.Contents_Transform.GetComponent<ScrollRect>().content = 
+				contentList[currentIndex].GetComponent<RectTransform>(); ;
 		}
 	}
 

@@ -12,7 +12,7 @@ public class CraftingSlotContentItem
     private string[] mapItem;
     private int materialsCount;
     private string mapResultItem;
-
+    private int haveBar;
 
     public int MapId
     {
@@ -38,17 +38,30 @@ public class CraftingSlotContentItem
         set { mapResultItem = value; }
     }
 
+    public int HaveBar
+    {
+        get { return haveBar; }
+        set { haveBar = value; }
+    }
+
 
     public CraftingSlotContentItem()
     {
 
     }
 
-    public CraftingSlotContentItem(int id,string[] item,int count,string result)
+    public CraftingSlotContentItem(int id,string[] item,int count,string result,int haveBar)
     {
         this.mapId = id;
         mapItem = item;
         materialsCount = count;
         mapResultItem = result;
+        this.haveBar = haveBar;
+    }
+
+
+    public override string ToString()
+    {
+        return string.Format(mapId + "--" + mapItem + "--" + materialsCount + "--" + mapResultItem + "--" + haveBar + "--");
     }
 }

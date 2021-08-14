@@ -1,14 +1,143 @@
 [
     {
-        "MapId": 11,
-        "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
-        "MaterialsCount":10,
-		"MapName":"Wooden Bow"
+        "Type":[
+            {
+                "MapId":10,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"Platform_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":20,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Window_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":30,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"Wooden Door",
+                "HaveBar":0
+            },
+            {
+                "MapId":40,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Wall_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":41,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Doorway_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":42,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Window Frame_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":50,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"Roof_Metal",
+                "HaveBar":0
+            },
+            {
+                "MapId":60,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Stairs_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":70,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"L Shaped Stairs_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":71,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"Wooden Ladder",
+                "HaveBar":0
+            },
+            {
+                "MapId":80,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Ceiling Light",
+                "HaveBar":0
+            },
+            {
+                "MapId":90,
+                "MapContents":"0,1,1,1,2,0,0,1,2,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0",
+                "MaterialsCount":10,
+                "MapName":"Pillar_Wood",
+                "HaveBar":0
+            },
+            {
+                "MapId":100,
+                "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
+                "MaterialsCount":7,
+                "MapName":"Floor_Wood",
+                "HaveBar":0
+            }
+        ]
     },
     {
-        "MapId": 12,
-        "MapContents":"0,0,0,1,2,0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0",
-        "MaterialsCount":7,
-		"MapName":"Wooden Spear"
+        "Type":[
+            {
+                "MapId":110,
+                "MapContents":"1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0,1",
+                "MaterialsCount":10,
+                "MapName":"Wooden Bow",
+                "HaveBar":1
+            },
+            {
+                "MapId":120,
+                "MapContents":"0,0,1,0,0,0,0,1,0,0,1,1,1,1,1,0,0,1,0,0,0,0,1,0,0",
+                "MaterialsCount":10,
+                "MapName":"Wooden Spear",
+                "HaveBar":1
+            },
+            {
+                "MapId":130,
+                "MapContents":"0,0,1,0,0,0,2,1,2,0,1,1,1,1,1,0,2,1,2,0,0,0,1,0,0",
+                "MaterialsCount":10,
+                "MapName":"Shotgun",
+                "HaveBar":1
+            },
+            {
+                "MapId":140,
+                "MapContents":"1,0,0,0,1,0,1,2,1,0,0,2,1,2,0,0,1,2,1,0,1,0,0,0,1",
+                "MaterialsCount":10,
+                "MapName":"Assault Rifle",
+                "HaveBar":1
+            },
+            {
+                "MapId":150,
+                "MapContents":"2,0,1,0,2,0,0,1,0,0,1,1,1,1,1,0,0,1,0,0,2,0,1,0,2",
+                "MaterialsCount":10,
+                "MapName":"Hunting Rifle",
+                "HaveBar":1
+            },
+            {
+                "MapId":160,
+                "MapContents":"0,2,2,1,1,0,2,2,1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,1,1",
+                "MaterialsCount":10,
+                "MapName":"Stone Hatchet",
+                "HaveBar":1
+            }
+        ]
     }
 ]

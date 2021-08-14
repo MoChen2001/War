@@ -2,32 +2,84 @@
     {
         "Type": [
             {
-                "ItemID":1,
+                "ItemID":10,
                 "ItemName": "地基"
             },
             {
-                "ItemID":2,
-                "ItemName": "墙壁"
+                "ItemID":20,
+                "ItemName": "窗户"
             },
             {
-                "ItemID":3,
+                "ItemID":30,
                 "ItemName": "门"
             },
             {
-                "ItemID":4,
-                "ItemName": "窗户"
+                "ItemID":40,
+                "ItemName": "墙壁"
+            },
+            {
+                "ItemID":41,
+                "ItemName": "门型墙壁"
+            },
+            {
+                "ItemID":42,
+                "ItemName": "窗型墙壁"
+            },
+            {
+                "ItemID":50,
+                "ItemName": "屋顶"
+            },
+            {
+                "ItemID":60,
+                "ItemName": "楼梯"
+            },
+            {
+                "ItemID":70,
+                "ItemName": "L型梯"
+            },
+            {
+                "ItemID":71,
+                "ItemName": "梯子"
+            },
+            {
+                "ItemID":80,
+                "ItemName": "吊灯"
+            },
+            {
+                "ItemID":90,
+                "ItemName": "墙壁填充"
+            },
+            {
+                "ItemID":100,
+                "ItemName": "地板"
             }
         ]
     },
-	{
+    {
         "Type": [
             {
-                "ItemID":11,
+                "ItemID":110,
                 "ItemName": "弓箭"
             },
             {
-                "ItemID":12,
+                "ItemID":120,
                 "ItemName": "长矛"
+            },
+            {
+                "ItemID":130,
+                "ItemName": "霞弹枪"
+            },
+            {
+                "ItemID":140,
+                "ItemName": "步枪"
+            },
+            {
+                "ItemID":150,
+                "ItemName": "猎枪"
+            },
+            {
+                "ItemID":160,
+                "ItemName": "石斧"
             }
         ]
     }

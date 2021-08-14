@@ -16,6 +16,7 @@ public class CraftingController : MonoBehaviour
     private Button CraftingAll;         // 合成全部按钮
     private GameObject craftingItem;    // 合成出的物品的预制体
     private int itemId;                 // 合成出的物品的 ID
+    private int haveBar;                // 物品是否有耐久条
 
     public GameObject Prefab_CraftingItem { set { craftingItem = value; } }
     public Transform Bg_Transform { get { return bg_Transform; } }
@@ -40,7 +41,7 @@ public class CraftingController : MonoBehaviour
 
 
         CannotUseCraftingOne();
-        SetCraftingContentSprite(0,null);
+        SetCraftingContentSprite(0,null,0);
     }
 
 
@@ -48,8 +49,9 @@ public class CraftingController : MonoBehaviour
 
 
     // 外部设置要合成的物品的图片
-    public void SetCraftingContentSprite(int id, Sprite sprite)
+    public void SetCraftingContentSprite(int id, Sprite sprite,int haveBar = 0)
     {
+        this.haveBar = haveBar;
         itemId = id;
         if (sprite != null)
         {
@@ -140,7 +142,7 @@ public class CraftingController : MonoBehaviour
             RectTransform rectTransform = target.GetComponent<RectTransform>();
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 185.2f);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 184.2f);
-            target.GetComponent<InventoryItemController>().InitSingleItem(itemId, itemImage.sprite, addNumber,1);
+            target.GetComponent<InventoryItemController>().InitSingleItem(itemId, itemImage.sprite, addNumber,haveBar);
         }
         else
         {
